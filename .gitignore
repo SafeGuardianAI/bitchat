@@ -80,3 +80,8 @@ build.log
 
 # Local configs
 Local.xcconfig
+
+# A2A phase 0/1 build artifacts
+/Generated/
+rust/a2a-bridge/target/
+*.pbxproj.bak
