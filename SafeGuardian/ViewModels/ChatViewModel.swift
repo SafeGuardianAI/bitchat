@@ -3167,6 +3167,13 @@ final class ChatViewModel: ObservableObject, BitchatDelegate, CommandContextProv
                         updateEncryptionStatus(for: peerID)
                     }
                 }
+
+            case .agentText:
+                guard let text = String(data: payload, encoding: .utf8) else { return }
+                // TODO(A2A Phase 2): hand off to the on-device agent's tool-call loop
+                // instead of just logging. This is the inbound half of the minimal
+                // agent-negotiation ack described in docs/A2A_BITCHAT_BLE_BINDING.md.
+                SecureLogger.info("🤖 agentText from \(peerID): \(text)", category: .session)
             }
         }
     }
