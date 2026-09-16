@@ -7,7 +7,7 @@ struct AnnouncementPacket {
     let noisePublicKey: Data            // Noise static public key (Curve25519.KeyAgreement)
     let signingPublicKey: Data          // Ed25519 public key for signing
     let directNeighbors: [Data]?        // 8-byte peer IDs
-    var agentInfo: AgentInfo? = nil     // Present only if this device hosts an agent
+    let agentInfo: AgentInfo?           // Present only if this device hosts an agent
 
     private enum TLVType: UInt8 {
         case nickname = 0x01
@@ -15,6 +15,14 @@ struct AnnouncementPacket {
         case signingPublicKey = 0x03
         case directNeighbors = 0x04
         case agentInfo = 0x05
+    }
+
+    init(nickname: String, noisePublicKey: Data, signingPublicKey: Data, directNeighbors: [Data]? = nil, agentInfo: AgentInfo? = nil) {
+        self.nickname = nickname
+        self.noisePublicKey = noisePublicKey
+        self.signingPublicKey = signingPublicKey
+        self.directNeighbors = directNeighbors
+        self.agentInfo = agentInfo
     }
 
     func encode() -> Data? {
