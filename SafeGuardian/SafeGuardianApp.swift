@@ -30,6 +30,9 @@ struct SafeGuardianApp: App {
     private let idBridge = NostrIdentityBridge()
     
     init() {
+#if DEBUG
+        print("A2A spike:", A2ADiscoverySpike.verifyRoundTrip())
+#endif
         let keychain = KeychainManager()
         let idBridge = self.idBridge
         _chatViewModel = StateObject(
