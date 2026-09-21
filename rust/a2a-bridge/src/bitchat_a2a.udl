@@ -1,0 +1,4 @@
+namespace bitchat_a2a {
+    string round_trip(string input);
+    string a2a_version();
+};

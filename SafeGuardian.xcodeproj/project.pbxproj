@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17901751FD8010AFC8E750F2 /* SafeGuardianShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 61F92EBA29C47C0FCC482F1F /* SafeGuardianShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1FF68266998AFF8E83587EC5 /* BitchatA2ABridge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3469DA22B2806239F69E8844 /* BitchatA2ABridge.xcframework */; };
 		3EE336D150427F736F32B56C /* P256K in Frameworks */ = {isa = PBXBuildFile; productRef = B1D9136AA0083366353BFA2F /* P256K */; };
 		885BBED78092484A5B069461 /* P256K in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB6BA1B8464F1EA38F4E286 /* P256K */; };
 		A6BCF9482F80953E001CF9B9 /* BitFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A6BCF9472F80953E001CF9B9 /* BitFoundation */; };
@@ -16,8 +17,9 @@
 		A6E3E5722E7703760032EA8A /* BitLogger in Frameworks */ = {isa = PBXBuildFile; productRef = A6E3E5712E7703760032EA8A /* BitLogger */; };
 		A6E3EA7F2E7706720032EA8A /* Tor in Frameworks */ = {isa = PBXBuildFile; productRef = A6E3EA7E2E7706720032EA8A /* Tor */; };
 		A6E3EA812E7706A80032EA8A /* Tor in Frameworks */ = {isa = PBXBuildFile; productRef = A6E3EA802E7706A80032EA8A /* Tor */; };
-		E0A1B2C3D4E5F6012345678D /* relays/online_relays_gps.csv in Resources */ = {isa = PBXBuildFile; fileRef = E0A1B2C3D4E5F6012345678A /* relays/online_relays_gps.csv */; };
-		E0A1B2C3D4E5F6012345678E /* relays/online_relays_gps.csv in Resources */ = {isa = PBXBuildFile; fileRef = E0A1B2C3D4E5F6012345678A /* relays/online_relays_gps.csv */; };
+		C6F7AF03DF34139D56BF13BF /* BitchatA2ABridge.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3469DA22B2806239F69E8844 /* BitchatA2ABridge.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0A1B2C3D4E5F6012345678D /* online_relays_gps.csv in Resources */ = {isa = PBXBuildFile; fileRef = E0A1B2C3D4E5F6012345678A /* online_relays_gps.csv */; };
+		E0A1B2C3D4E5F6012345678E /* online_relays_gps.csv in Resources */ = {isa = PBXBuildFile; fileRef = E0A1B2C3D4E5F6012345678A /* online_relays_gps.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		704149E7B5165A4BC027786A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C6F7AF03DF34139D56BF13BF /* BitchatA2ABridge.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6C356449BAE4E0F650565D1 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			dstPath = "";
-			dstSubfolder = PlugIns;
 			files = (
 				17901751FD8010AFC8E750F2 /* SafeGuardianShareExtension.appex in Embed Foundation Extensions */,
 			);
@@ -58,12 +70,13 @@
 
 /* Begin PBXFileReference section */
 		03C57F452B55FD0FD8F51421 /* SafeGuardianTests_macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeGuardianTests_macOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3469DA22B2806239F69E8844 /* BitchatA2ABridge.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = BitchatA2ABridge.xcframework; path = Generated/A2ABridge/BitchatA2ABridge.xcframework; sourceTree = "<group>"; };
 		61F92EBA29C47C0FCC482F1F /* SafeGuardianShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafeGuardianShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3A7C058C2C8E1A06C8CF8B /* SafeGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D0D41CA19EE5A772AA8434 /* SafeGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F183FC2E948783006A9046 /* tor-nolzma.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "tor-nolzma.xcframework"; path = "localPackages/Tor/Frameworks/tor-nolzma.xcframework"; sourceTree = "<group>"; };
 		C0DB1DE27F0AAB5092663E8E /* SafeGuardianTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeGuardianTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0A1B2C3D4E5F6012345678A /* relays/online_relays_gps.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = relays/online_relays_gps.csv; sourceTree = "<group>"; };
+		E0A1B2C3D4E5F6012345678A /* online_relays_gps.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = relays/online_relays_gps.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -146,6 +159,8 @@
 		};
 		A6E367C92E76469E0032EA8A /* Configs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Configs;
 			sourceTree = "<group>";
 		};
@@ -168,6 +183,7 @@
 				885BBED78092484A5B069461 /* P256K in Frameworks */,
 				A6E3EA7F2E7706720032EA8A /* Tor in Frameworks */,
 				A6BCF9482F80953E001CF9B9 /* BitFoundation in Frameworks */,
+				1FF68266998AFF8E83587EC5 /* BitchatA2ABridge.xcframework in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -177,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				A6E32C972E762EA70032EA8A /* SafeGuardian */,
-				E0A1B2C3D4E5F6012345678A /* relays/online_relays_gps.csv */,
+				E0A1B2C3D4E5F6012345678A /* online_relays_gps.csv */,
 				A6E32D212E762EAB0032EA8A /* SafeGuardianShareExtension */,
 				A6E32D412E762EAE0032EA8A /* SafeGuardianTests */,
 				A6E367C92E76469E0032EA8A /* Configs */,
@@ -202,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				A6F183FC2E948783006A9046 /* tor-nolzma.xcframework */,
+				3469DA22B2806239F69E8844 /* BitchatA2ABridge.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,6 +235,8 @@
 				31F6FDADA63050361C14F3A1 /* Frameworks */,
 			);
 			buildRules = (
+			);
+			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
 				A6E32C972E762EA70032EA8A /* SafeGuardian */,
@@ -261,6 +280,8 @@
 			);
 			buildRules = (
 			);
+			dependencies = (
+			);
 			name = SafeGuardianShareExtension;
 			productName = SafeGuardianShareExtension;
 			productReference = 61F92EBA29C47C0FCC482F1F /* SafeGuardianShareExtension.appex */;
@@ -294,6 +315,7 @@
 				CD6E8F32BC38357473954F97 /* Resources */,
 				B5A5CC493FFB3D8966548140 /* Frameworks */,
 				B6C356449BAE4E0F650565D1 /* Embed Foundation Extensions */,
+				704149E7B5165A4BC027786A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,11 +370,12 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B8C407587481BBB190741C93 /* XCRemoteSwiftPackageReference "swift-secp256k1" */,
-				A6E3E56E2E77036A0032EA8A /* XCLocalSwiftPackageReference "localPackages/BitLogger" */,
-				A6E3EA7D2E7706720032EA8A /* XCLocalSwiftPackageReference "localPackages/Arti" */,
-				A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "localPackages/BitFoundation" */,
+				A6E3E56E2E77036A0032EA8A /* XCLocalSwiftPackageReference "BitLogger" */,
+				A6E3EA7D2E7706720032EA8A /* XCLocalSwiftPackageReference "Arti" */,
+				A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "BitFoundation" */,
 			);
 			preferredProjectObjectVersion = 90;
+			productRefGroup = 9F37F9F2C353B58AC809E93B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -369,7 +392,7 @@
 		0214973A876129753D39EB47 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				E0A1B2C3D4E5F6012345678D /* relays/online_relays_gps.csv in Resources */,
+				E0A1B2C3D4E5F6012345678D /* online_relays_gps.csv in Resources */,
 			);
 		};
 		C5E027A42ECCDFD700BD6012 /* Resources */ = {
@@ -385,7 +408,7 @@
 		CD6E8F32BC38357473954F97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				E0A1B2C3D4E5F6012345678E /* relays/online_relays_gps.csv in Resources */,
+				E0A1B2C3D4E5F6012345678E /* online_relays_gps.csv in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -437,7 +460,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		077A5203074247CF8F766E2F /* Debug configuration for PBXNativeTarget "SafeGuardianTests_iOS" */ = {
+		077A5203074247CF8F766E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
@@ -462,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		0DACAA261446D178EDD30ECA /* Release configuration for PBXNativeTarget "SafeGuardianTests_iOS" */ = {
+		0DACAA261446D178EDD30ECA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -487,7 +510,7 @@
 			};
 			name = Release;
 		};
-		147FDAE548082D5B921C6F0B /* Release configuration for PBXNativeTarget "SafeGuardianTests_macOS" */ = {
+		147FDAE548082D5B921C6F0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -513,7 +536,7 @@
 			};
 			name = Release;
 		};
-		3DCF45111852FB2AEBE05E31 /* Release configuration for PBXNativeTarget "SafeGuardianShareExtension" */ = {
+		3DCF45111852FB2AEBE05E31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -544,7 +567,7 @@
 			};
 			name = Release;
 		};
-		702E7395723CADA4B830F4A9 /* Debug configuration for PBXNativeTarget "SafeGuardian_iOS" */ = {
+		702E7395723CADA4B830F4A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
@@ -560,6 +583,10 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = NO;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Generated/A2ABridge",
+				);
 				INFOPLIST_FILE = SafeGuardian/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SafeGuardian;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -569,6 +596,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.1;
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Generated/A2ABridge/swift/bitchat_a2aFFI.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = SafeGuardian;
 				SDKROOT = iphoneos;
@@ -581,7 +609,7 @@
 			};
 			name = Debug;
 		};
-		7FA2BADBF3B325125030CAB1 /* Debug configuration for PBXNativeTarget "SafeGuardianTests_macOS" */ = {
+		7FA2BADBF3B325125030CAB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
@@ -607,7 +635,7 @@
 			};
 			name = Debug;
 		};
-		B36671AEACCBF92BE10852E9 /* Release configuration for PBXNativeTarget "SafeGuardian_iOS" */ = {
+		B36671AEACCBF92BE10852E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -623,6 +651,10 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Generated/A2ABridge",
+				);
 				INFOPLIST_FILE = SafeGuardian/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SafeGuardian;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -632,6 +664,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.1;
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Generated/A2ABridge/swift/bitchat_a2aFFI.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = SafeGuardian;
 				SDKROOT = iphoneos;
@@ -644,7 +677,7 @@
 			};
 			name = Release;
 		};
-		BB044400A0F06B93F22D0D55 /* Release configuration for PBXNativeTarget "SafeGuardian_macOS" */ = {
+		BB044400A0F06B93F22D0D55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
@@ -684,7 +717,7 @@
 			};
 			name = Release;
 		};
-		BF0D85727BCB6E346962F419 /* Release configuration for PBXProject "SafeGuardian" */ = {
+		BF0D85727BCB6E346962F419 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -746,7 +779,7 @@
 			};
 			name = Release;
 		};
-		CC79F65842D42034ACEE79B7 /* Debug configuration for PBXNativeTarget "SafeGuardian_macOS" */ = {
+		CC79F65842D42034ACEE79B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
@@ -786,7 +819,7 @@
 			};
 			name = Debug;
 		};
-		D8C5BF109BB2630752185FA0 /* Debug configuration for PBXProject "SafeGuardian" */ = {
+		D8C5BF109BB2630752185FA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -855,7 +888,7 @@
 			};
 			name = Debug;
 		};
-		DAC5E82049F8A97360BE63D6 /* Debug configuration for PBXNativeTarget "SafeGuardianShareExtension" */ = {
+		DAC5E82049F8A97360BE63D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = A6E367C92E76469E0032EA8A /* Configs */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
@@ -892,63 +925,63 @@
 		1C27B5BA3DB46DDF0DBFEF62 /* Build configuration list for PBXNativeTarget "SafeGuardianTests_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7FA2BADBF3B325125030CAB1 /* Debug configuration for PBXNativeTarget "SafeGuardianTests_macOS" */,
-				147FDAE548082D5B921C6F0B /* Release configuration for PBXNativeTarget "SafeGuardianTests_macOS" */,
+				7FA2BADBF3B325125030CAB1 /* Debug */,
+				147FDAE548082D5B921C6F0B /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 		38C4AF6313E5037F25CEF30B /* Build configuration list for PBXNativeTarget "SafeGuardianTests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				077A5203074247CF8F766E2F /* Debug configuration for PBXNativeTarget "SafeGuardianTests_iOS" */,
-				0DACAA261446D178EDD30ECA /* Release configuration for PBXNativeTarget "SafeGuardianTests_iOS" */,
+				077A5203074247CF8F766E2F /* Debug */,
+				0DACAA261446D178EDD30ECA /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 		3EA424CBD51200895D361189 /* Build configuration list for PBXProject "SafeGuardian" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8C5BF109BB2630752185FA0 /* Debug configuration for PBXProject "SafeGuardian" */,
-				BF0D85727BCB6E346962F419 /* Release configuration for PBXProject "SafeGuardian" */,
+				D8C5BF109BB2630752185FA0 /* Debug */,
+				BF0D85727BCB6E346962F419 /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 		53EADEF7546F94DDF82271B9 /* Build configuration list for PBXNativeTarget "SafeGuardian_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				702E7395723CADA4B830F4A9 /* Debug configuration for PBXNativeTarget "SafeGuardian_iOS" */,
-				B36671AEACCBF92BE10852E9 /* Release configuration for PBXNativeTarget "SafeGuardian_iOS" */,
+				702E7395723CADA4B830F4A9 /* Debug */,
+				B36671AEACCBF92BE10852E9 /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 		DA5644925338B8189B035657 /* Build configuration list for PBXNativeTarget "SafeGuardian_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC79F65842D42034ACEE79B7 /* Debug configuration for PBXNativeTarget "SafeGuardian_macOS" */,
-				BB044400A0F06B93F22D0D55 /* Release configuration for PBXNativeTarget "SafeGuardian_macOS" */,
+				CC79F65842D42034ACEE79B7 /* Debug */,
+				BB044400A0F06B93F22D0D55 /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 		E4EA6DC648DF55FF84032EB5 /* Build configuration list for PBXNativeTarget "SafeGuardianShareExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAC5E82049F8A97360BE63D6 /* Debug configuration for PBXNativeTarget "SafeGuardianShareExtension" */,
-				3DCF45111852FB2AEBE05E31 /* Release configuration for PBXNativeTarget "SafeGuardianShareExtension" */,
+				DAC5E82049F8A97360BE63D6 /* Debug */,
+				3DCF45111852FB2AEBE05E31 /* Release */,
 			);
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "localPackages/BitFoundation" */ = {
+		A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "BitFoundation" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = localPackages/BitFoundation;
 		};
-		A6E3E56E2E77036A0032EA8A /* XCLocalSwiftPackageReference "localPackages/BitLogger" */ = {
+		A6E3E56E2E77036A0032EA8A /* XCLocalSwiftPackageReference "BitLogger" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = localPackages/BitLogger;
 		};
-		A6E3EA7D2E7706720032EA8A /* XCLocalSwiftPackageReference "localPackages/Arti" */ = {
+		A6E3EA7D2E7706720032EA8A /* XCLocalSwiftPackageReference "Arti" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = localPackages/Arti;
 		};
@@ -977,7 +1010,7 @@
 		};
 		A6BCF9492F809550001CF9B9 /* BitFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "localPackages/BitFoundation" */;
+			package = A6BCF9462F80953E001CF9B9 /* XCLocalSwiftPackageReference "BitFoundation" */;
 			productName = BitFoundation;
 		};
 		A6E3E56F2E77036A0032EA8A /* BitLogger */ = {
