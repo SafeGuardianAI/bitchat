@@ -1578,6 +1578,12 @@ final class BLEService: NSObject {
         guard let payload = VerificationService.shared.buildVerifyResponse(noiseKeyHex: noiseKeyHex, nonceA: nonceA) else { return }
         sendNoisePayload(payload, to: peerID)
     }
+
+    func sendAgentText(_ text: String, to peerID: PeerID) {
+        guard let textData = text.data(using: .utf8) else { return }
+        let payload = NoisePayload(type: .agentText, data: textData).encode()
+        sendNoisePayload(payload, to: peerID)
+    }
 }
 
 // MARK: - GossipSyncManager Delegate
@@ -4204,6 +4210,11 @@ extension BLEService {
                 let ts = Date(timeIntervalSince1970: Double(packet.timestamp) / 1000)
                 notifyUI { [weak self] in
                     self?.delegate?.didReceiveNoisePayload(from: peerID, type: .verifyResponse, payload: Data(payloadData), timestamp: ts)
+                }
+            case .agentText:
+                let ts = Date(timeIntervalSince1970: Double(packet.timestamp) / 1000)
+                notifyUI { [weak self] in
+                    self?.delegate?.didReceiveNoisePayload(from: peerID, type: .agentText, payload: Data(payloadData), timestamp: ts)
                 }
             case .none:
                 SecureLogger.warning("⚠️ Unknown noise payload type: \(payloadType)")
