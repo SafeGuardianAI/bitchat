@@ -60,6 +60,9 @@ protocol Transport: AnyObject {
     func sendVerifyChallenge(to peerID: PeerID, noiseKeyHex: String, nonceA: Data)
     func sendVerifyResponse(to peerID: PeerID, noiseKeyHex: String, nonceA: Data)
 
+    // Agent-to-agent negotiation (optional for transports; BLE mesh only for now)
+    func sendAgentText(_ text: String, to peerID: PeerID)
+
     // Pending file management (BCH-01-002: files held in memory until user accepts)
     func acceptPendingFile(id: String) -> URL?
     func declinePendingFile(id: String)
@@ -68,6 +71,7 @@ protocol Transport: AnyObject {
 extension Transport {
     func sendVerifyChallenge(to peerID: PeerID, noiseKeyHex: String, nonceA: Data) {}
     func sendVerifyResponse(to peerID: PeerID, noiseKeyHex: String, nonceA: Data) {}
+    func sendAgentText(_ text: String, to peerID: PeerID) {}
     func sendFileBroadcast(_ packet: BitchatFilePacket, transferId: String) {}
     func sendFilePrivate(_ packet: BitchatFilePacket, to peerID: PeerID, transferId: String) {}
     func cancelTransfer(_ transferId: String) {}
