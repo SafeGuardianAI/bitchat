@@ -171,8 +171,9 @@ extension ChatViewModel {
             handleDelivered(noisePayload, senderPubkey: senderPubkey, convKey: convKey)
         case .readReceipt:
             handleReadReceipt(noisePayload, senderPubkey: senderPubkey, convKey: convKey)
-        case .verifyChallenge, .verifyResponse:
-            // QR verification payloads over Nostr are not supported; ignore in geohash DMs
+        case .verifyChallenge, .verifyResponse, .agentText:
+            // QR verification and agent negotiation payloads over Nostr are not
+            // supported; the A2A binding is BLE-mesh only for now. Ignore in geohash DMs.
             break
         }
     }
@@ -404,7 +405,7 @@ extension ChatViewModel {
             handleReadReceipt(payload, senderPubkey: senderPubkey, convKey: convKey)
         
         // Explicitly list other cases so we get compile-time check if a new case is added in the future
-        case .verifyChallenge, .verifyResponse:
+        case .verifyChallenge, .verifyResponse, .agentText:
             break
         }
     }
@@ -648,7 +649,7 @@ extension ChatViewModel {
                             handleDelivered(payload, senderPubkey: senderPubkey, convKey: targetPeerID)
                         case .readReceipt:
                             handleReadReceipt(payload, senderPubkey: senderPubkey, convKey: targetPeerID)
-                        case .verifyChallenge, .verifyResponse:
+                        case .verifyChallenge, .verifyResponse, .agentText:
                             break
                         }
                     }

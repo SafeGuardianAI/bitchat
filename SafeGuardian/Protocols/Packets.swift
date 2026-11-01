@@ -7,12 +7,22 @@ struct AnnouncementPacket {
     let noisePublicKey: Data            // Noise static public key (Curve25519.KeyAgreement)
     let signingPublicKey: Data          // Ed25519 public key for signing
     let directNeighbors: [Data]?        // 8-byte peer IDs
+    let agentInfo: AgentInfo?           // Present only if this device hosts an agent
 
     private enum TLVType: UInt8 {
         case nickname = 0x01
         case noisePublicKey = 0x02
         case signingPublicKey = 0x03
         case directNeighbors = 0x04
+        case agentInfo = 0x05
+    }
+
+    init(nickname: String, noisePublicKey: Data, signingPublicKey: Data, directNeighbors: [Data]? = nil, agentInfo: AgentInfo? = nil) {
+        self.nickname = nickname
+        self.noisePublicKey = noisePublicKey
+        self.signingPublicKey = signingPublicKey
+        self.directNeighbors = directNeighbors
+        self.agentInfo = agentInfo
     }
 
     func encode() -> Data? {
@@ -48,6 +58,13 @@ struct AnnouncementPacket {
             }
         }
 
+        // TLV for agent info (optional)
+        if let agentInfo, let agentInfoData = agentInfo.encode() {
+            data.append(TLVType.agentInfo.rawValue)
+            data.append(UInt8(agentInfoData.count))
+            data.append(agentInfoData)
+        }
+
         return data
     }
 
@@ -57,6 +74,7 @@ struct AnnouncementPacket {
         var noisePublicKey: Data?
         var signingPublicKey: Data?
         var directNeighbors: [Data]?
+        var agentInfo: AgentInfo?
 
         while offset + 2 <= data.count {
             let typeRaw = data[offset]
@@ -87,6 +105,8 @@ struct AnnouncementPacket {
                         }
                         directNeighbors = neighbors
                     }
+                case .agentInfo:
+                    agentInfo = AgentInfo.decode(from: value)
                 }
             } else {
                 // Unknown TLV; skip (tolerant decoder for forward compatibility)
@@ -99,7 +119,8 @@ struct AnnouncementPacket {
             nickname: nickname,
             noisePublicKey: noisePublicKey,
             signingPublicKey: signingPublicKey,
-            directNeighbors: directNeighbors
+            directNeighbors: directNeighbors,
+            agentInfo: agentInfo
         )
     }
 }
